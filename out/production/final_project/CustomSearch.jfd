@@ -1,0 +1,54 @@
+JFDML JFormDesigner: "6.0.2.0.116" Java: "1.8.0_112-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {par l {seq {space :p:39:p, par l {seq l {par t:::p {seq t {comp label1:::p:82:p, space s:::p}, seq t {comp label4:::p:72:p, space :p:28:p}, seq l {comp label5:::p:57:p, space :::x}}, par l {comp position:::p:161:p, par t:l::p {comp textField1::l:::x, comp name::l:p:136:p}}, space :p:52:p, comp radioButton1:::p::p}, seq l {space :p:154:p, comp button1:::p:144:p}}}, seq l {space :p:187:p, comp label6:::p::p}}, space ::56:x}}"
+			"$verticalGroup": "par l {seq t {space :::p, comp label6:::p::p, space ::53:x, par l {comp position:::p::p, comp label1:::p::p, comp radioButton1:::p::p}, space :p:17:p, par b {comp label4::b:p::p, comp name::b:p::p}, space :p:24:p, par b {comp label5::b:p::p, comp textField1::b:p::p}, space :p:70:p, comp button1:::p::p, space :p:46:p}}"
+		} ) {
+			name: "this"
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "position"
+				"model": new javax.swing.DefaultComboBoxModel {
+					selectedItem: "All"
+					addElement( "All" )
+				}
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "name"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"text": "Search"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "Position: "
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label4"
+				"text": "Name:"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label5"
+				"text": "Team: "
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField1"
+			} )
+			add( new FormComponent( "javax.swing.JRadioButton" ) {
+				name: "radioButton1"
+				"text": "Injured?"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label6"
+				"text": "Custom Search"
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 0, false )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 400, 300 )
+		} )
+	}
+}

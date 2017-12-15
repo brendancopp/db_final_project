@@ -1,0 +1,38 @@
+JFDML JFormDesigner: "6.0.2.0.116" Java: "1.8.0_112-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq t {space ::161:x, comp label1:::p:127:p, space :p:212:p}, seq {space :::p, par l {seq t {comp scrollPane1:::p:232:p, par l {seq {space s:::p, comp textField1::::238:x, space :::p}, seq l {space :p:40:p, comp button2:::p:171:p, space ::51:x}}}, seq l {comp button1:::p:232:p, space ::262:x}}}}"
+			"$verticalGroup": "par l {seq l {par l {seq {space :p:19:p, comp label1:::p::p, space :::p, comp scrollPane1:::p:248:p}, seq l {space :p:74:p, comp textField1:::p::p, space u:::p, comp button2:::p::p}}, space u:::p, comp button1::::57:x, space :p:12:p}}"
+		} ) {
+			name: "this"
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "Modify Roster"
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 0, false )
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JList" ) {
+					name: "list1"
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"text": "Delete Roster"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField1"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button2"
+				"text": "Add Roster"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 400, 300 )
+		} )
+	}
+}
