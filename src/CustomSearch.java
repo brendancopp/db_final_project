@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 /*
@@ -15,10 +16,14 @@ public class CustomSearch extends JPanel {
         initComponents();
     }
 
+    private void buttonSearchActionPerformed(ActionEvent e) {
+        // TODO add your code here
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Brendan Copp
-        position = new JComboBox<>();
+        positionComboBox = new JComboBox<>();
         textFieldName = new JTextField();
         buttonSearch = new JButton();
         label1 = new JLabel();
@@ -27,7 +32,7 @@ public class CustomSearch extends JPanel {
         textFieldTeam = new JTextField();
         label6 = new JLabel();
         label2 = new JLabel();
-        comboBox1 = new JComboBox<>();
+        comboBoxWeek = new JComboBox<>();
 
         //======== this ========
 
@@ -39,13 +44,14 @@ public class CustomSearch extends JPanel {
                 java.awt.Color.red), getBorder())); addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
 
 
-        //---- position ----
-        position.setModel(new DefaultComboBoxModel<>(new String[] {
+        //---- positionComboBox ----
+        positionComboBox.setModel(new DefaultComboBoxModel<>(new String[] {
             "All"
         }));
 
         //---- buttonSearch ----
         buttonSearch.setText("Search");
+        buttonSearch.addActionListener(e -> buttonSearchActionPerformed(e));
 
         //---- label1 ----
         label1.setText("Position: ");
@@ -63,8 +69,8 @@ public class CustomSearch extends JPanel {
         //---- label2 ----
         label2.setText("Week: ");
 
-        //---- comboBox1 ----
-        comboBox1.setModel(new DefaultComboBoxModel<>(new String[] {
+        //---- comboBoxWeek ----
+        comboBoxWeek.setModel(new DefaultComboBoxModel<>(new String[] {
             "1",
             "2",
             "3",
@@ -103,11 +109,11 @@ public class CustomSearch extends JPanel {
                                             .addComponent(label4, GroupLayout.PREFERRED_SIZE, 72, GroupLayout.PREFERRED_SIZE)))
                                     .addGap(18, 18, 18)))
                             .addGroup(layout.createParallelGroup()
-                                .addComponent(position, GroupLayout.PREFERRED_SIZE, 161, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(positionComboBox, GroupLayout.PREFERRED_SIZE, 161, GroupLayout.PREFERRED_SIZE)
                                 .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(textFieldTeam, GroupLayout.Alignment.LEADING)
                                     .addComponent(textFieldName, GroupLayout.Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 136, GroupLayout.PREFERRED_SIZE))
-                                .addComponent(comboBox1, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(comboBoxWeek, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE))))
                     .addContainerGap(163, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -118,10 +124,10 @@ public class CustomSearch extends JPanel {
                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup()
                         .addComponent(label2)
-                        .addComponent(comboBox1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                        .addComponent(comboBoxWeek, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                     .addGap(18, 18, 18)
                     .addGroup(layout.createParallelGroup()
-                        .addComponent(position, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(positionComboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                         .addComponent(label1))
                     .addGap(19, 19, 19)
                     .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
@@ -141,14 +147,17 @@ public class CustomSearch extends JPanel {
     void submitSearch(){
         String name = textFieldName.getText();
         String team = textFieldTeam.getText();
-        boolean isInjured = radioButtonIsInjured.isSelected();
+        String position = positionComboBox.getItemAt(positionComboBox.getSelectedIndex());
+        int weekNum = Integer.parseInt(comboBoxWeek.getItemAt(comboBoxWeek.getSelectedIndex()));
 
         //Call resulting stored procedure
+
+        //Call update Button in PlayerGui
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Brendan Copp
-    private JComboBox<String> position;
+    private JComboBox<String> positionComboBox;
     private JTextField textFieldName;
     private JButton buttonSearch;
     private JLabel label1;
@@ -157,6 +166,6 @@ public class CustomSearch extends JPanel {
     private JTextField textFieldTeam;
     private JLabel label6;
     private JLabel label2;
-    private JComboBox<String> comboBox1;
+    private JComboBox<String> comboBoxWeek;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

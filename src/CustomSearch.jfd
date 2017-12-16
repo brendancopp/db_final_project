@@ -4,12 +4,12 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq l {par l {seq l {space :p:193:p, comp buttonSearch:::p:144:p}, seq l {space :p:187:p, comp label6:::p::p}, seq {space :::x, par l {seq t {comp label2:::p::p, space :p:41:p}, seq t {par t {comp label1:::p:82:p, par l:t {comp label5:::p:57:p, comp label4:::p:72:p}}, space s:::p}}, par l {comp position:::p:161:p, par t:l::p {comp textFieldTeam::l:::x, comp textFieldName::l:p:136:p}, comp comboBox1::l:p:150:p}}}, space ::163:x}}"
-			"$verticalGroup": "par l {seq t {space :::p, comp label6:::p::p, space ::54:x, par l {comp label2:::p::p, comp comboBox1:::p::p}, space :p:18:p, par l {comp position:::p::p, comp label1:::p::p}, space :p:19:p, par b {comp textFieldName::b:p::p, comp label4::b:p::p}, space :p:24:p, par b {comp textFieldTeam::b:p::p, comp label5::b:p::p}, space s:::p, comp buttonSearch:::p::p, space :p:46:p}}"
+			"$horizontalGroup": "par l {seq l {par l {seq l {space :p:193:p, comp buttonSearch:::p:144:p}, seq l {space :p:187:p, comp label6:::p::p}, seq {space :::x, par l {seq t {comp label2:::p::p, space :p:41:p}, seq t {par t {comp label1:::p:82:p, par l:t {comp label5:::p:57:p, comp label4:::p:72:p}}, space s:::p}}, par l {comp positionComboBox:::p:161:p, par t:l::p {comp textFieldTeam::l:::x, comp textFieldName::l:p:136:p}, comp comboBoxWeek::l:p:150:p}}}, space ::163:x}}"
+			"$verticalGroup": "par l {seq t {space :::p, comp label6:::p::p, space ::54:x, par l {comp label2:::p::p, comp comboBoxWeek:::p::p}, space :p:18:p, par l {comp positionComboBox:::p::p, comp label1:::p::p}, space :p:19:p, par b {comp textFieldName::b:p::p, comp label4::b:p::p}, space :p:24:p, par b {comp textFieldTeam::b:p::p, comp label5::b:p::p}, space s:::p, comp buttonSearch:::p::p, space :p:46:p}}"
 		} ) {
 			name: "this"
 			add( new FormComponent( "javax.swing.JComboBox" ) {
-				name: "position"
+				name: "positionComboBox"
 				"model": new javax.swing.DefaultComboBoxModel {
 					selectedItem: "All"
 					addElement( "All" )
@@ -21,6 +21,7 @@ new FormModel {
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "buttonSearch"
 				"text": "Search"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "buttonSearchActionPerformed", true ) )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label1"
@@ -47,7 +48,7 @@ new FormModel {
 				"text": "Week: "
 			} )
 			add( new FormComponent( "javax.swing.JComboBox" ) {
-				name: "comboBox1"
+				name: "comboBoxWeek"
 				"model": new javax.swing.DefaultComboBoxModel {
 					selectedItem: "1"
 					addElement( "1" )

@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.event.*;
 import java.util.ArrayList;
 import javax.swing.*;
 import javax.swing.GroupLayout;
@@ -44,15 +45,23 @@ public class NewRoster extends JPanel {
 
     }
 
+    private void buttonAddRosterActionPerformed(ActionEvent e) {
+        // TODO add your code here
+    }
+
+    private void buttonDeleteRosterActionPerformed(ActionEvent e) {
+        // TODO add your code here
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Brendan Copp
         label1 = new JLabel();
-        scrollPane1 = new JScrollPane();
+        displayRosters = new JScrollPane();
         list1 = new JList();
-        button1 = new JButton();
+        buttonDeleteRoster = new JButton();
         textField1 = new JTextField();
-        button2 = new JButton();
+        buttonAddRoster = new JButton();
 
         //======== this ========
 
@@ -68,16 +77,18 @@ public class NewRoster extends JPanel {
         label1.setText("Modify Roster");
         label1.setFont(label1.getFont().deriveFont(label1.getFont().getStyle() | Font.BOLD));
 
-        //======== scrollPane1 ========
+        //======== displayRosters ========
         {
-            scrollPane1.setViewportView(list1);
+            displayRosters.setViewportView(list1);
         }
 
-        //---- button1 ----
-        button1.setText("Delete Roster");
+        //---- buttonDeleteRoster ----
+        buttonDeleteRoster.setText("Delete Roster");
+        buttonDeleteRoster.addActionListener(e -> buttonDeleteRosterActionPerformed(e));
 
-        //---- button2 ----
-        button2.setText("Add Roster");
+        //---- buttonAddRoster ----
+        buttonAddRoster.setText("Add Roster");
+        buttonAddRoster.addActionListener(e -> buttonAddRosterActionPerformed(e));
 
         GroupLayout layout = new GroupLayout(this);
         setLayout(layout);
@@ -91,7 +102,7 @@ public class NewRoster extends JPanel {
                     .addContainerGap()
                     .addGroup(layout.createParallelGroup()
                         .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 232, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(displayRosters, GroupLayout.PREFERRED_SIZE, 232, GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup()
                                 .addGroup(layout.createSequentialGroup()
                                     .addGap(18, 18, 18)
@@ -99,10 +110,10 @@ public class NewRoster extends JPanel {
                                     .addContainerGap())
                                 .addGroup(layout.createSequentialGroup()
                                     .addGap(40, 40, 40)
-                                    .addComponent(button2, GroupLayout.PREFERRED_SIZE, 171, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(buttonAddRoster, GroupLayout.PREFERRED_SIZE, 171, GroupLayout.PREFERRED_SIZE)
                                     .addContainerGap(51, Short.MAX_VALUE))))
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(button1, GroupLayout.PREFERRED_SIZE, 232, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonDeleteRoster, GroupLayout.PREFERRED_SIZE, 232, GroupLayout.PREFERRED_SIZE)
                             .addContainerGap(262, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -113,14 +124,14 @@ public class NewRoster extends JPanel {
                             .addGap(19, 19, 19)
                             .addComponent(label1)
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 248, GroupLayout.PREFERRED_SIZE))
+                            .addComponent(displayRosters, GroupLayout.PREFERRED_SIZE, 248, GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(74, 74, 74)
                             .addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(button2)))
+                            .addComponent(buttonAddRoster)))
                     .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addComponent(button1, GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
+                    .addComponent(buttonDeleteRoster, GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
                     .addGap(12, 12, 12))
         );
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
@@ -129,10 +140,10 @@ public class NewRoster extends JPanel {
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Brendan Copp
     private JLabel label1;
-    private JScrollPane scrollPane1;
+    private JScrollPane displayRosters;
     private JList list1;
-    private JButton button1;
+    private JButton buttonDeleteRoster;
     private JTextField textField1;
-    private JButton button2;
+    private JButton buttonAddRoster;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

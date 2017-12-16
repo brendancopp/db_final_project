@@ -12,8 +12,8 @@ new FormModel {
 			add( new FormContainer( "javax.swing.JTabbedPane", new FormLayoutManager( class javax.swing.JTabbedPane ) ) {
 				name: "tabbedPane1"
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-					"$horizontalGroup": "par l {seq l {space :::p, par l {comp rosterAddPlayer::t::210:x, comp scrollPane4::t::210:x, seq l {comp rosterRosterLabel:::p:64:p, space :::p, comp rosterComboBox:::::x}, comp modifyRoster::l::210:x}, space :::p, par l {comp scrollPane3::l:p:364:p, seq l {comp rosterPlayerLabel:::p:64:p, space :::p, comp playerComboBox:::p:148:p, space s:::p, comp label1:::p::p, space :::p, comp comboBoxWeek:::p::p}}, space :p:6:p, par l {comp customSearch::::190:x, comp button1::::190:x, comp button3::l::190:x, comp button2::l:::x}, space :::p}}"
-					"$verticalGroup": "par l {seq t {space :::p, par l {comp rosterRosterLabel::l:::x, comp rosterPlayerLabel::l:::x, comp playerComboBox::l:::x, seq t {space :0:0:x, par l:::p {comp comboBoxWeek::t:::x, comp rosterComboBox::t:::x, comp button3::l:::x, comp label1:::::x}}}, space :::p, par l {seq {comp scrollPane4:::p:317:p, space s:::x, comp rosterAddPlayer:::p::p, space u:::p, comp modifyRoster:::p::p, space :p:88:p}, seq {par l {comp scrollPane3:::p:504:p, seq l {space :p:48:p, comp button1:::p::p, space :::p, comp customSearch:::p::p, space :::p, comp button2:::p::p}}, space :::x}}}}"
+					"$horizontalGroup": "par l {seq l {space :::p, par l {comp rosterAddPlayer::t::210:x, comp scrollPane4::t::210:x, seq l {comp rosterRosterLabel:::p:64:p, space :::p, comp rosterComboBox:::::x}, comp modifyRoster::l::210:x}, space :::p, par l {comp scrollPane3::l:p:364:p, seq l {comp rosterPlayerLabel:::p:64:p, space :::p, comp playerComboBox:::p:148:p, space s:::p, comp label1:::p::p, space :::p, comp comboBoxWeek:::p::p}}, space :p:6:p, par l {comp buttonUpdate::l::190:x, comp customSearch::l::190:x, comp buttonBestRoster::l:::x}, space :::p}}"
+					"$verticalGroup": "par l {seq t {space :::p, par l {comp rosterRosterLabel::l:::x, comp rosterPlayerLabel::l:::x, comp playerComboBox::l:::x, seq t {space :0:0:x, par l:::p {comp comboBoxWeek::t:::x, comp rosterComboBox::t:::x, comp buttonUpdate::l:::x, comp label1:::::x}}}, space :::p, par l {seq {comp scrollPane4:::p:317:p, space s:::x, comp rosterAddPlayer:::p::p, space u:::p, comp modifyRoster:::p::p, space :p:88:p}, seq {par l {comp scrollPane3:::p:504:p, seq l {space :p:83:p, comp customSearch:::p::p, space :::p, comp buttonBestRoster:::p::p}}, space :::x}}}}"
 				} ) {
 					name: "rosterPanel"
 					add( new FormComponent( "javax.swing.JLabel" ) {
@@ -78,12 +78,9 @@ new FormModel {
 						"text": "Week : "
 					} )
 					add( new FormComponent( "javax.swing.JButton" ) {
-						name: "button1"
-						"text": "Search"
-					} )
-					add( new FormComponent( "javax.swing.JButton" ) {
-						name: "button2"
+						name: "buttonBestRoster"
 						"text": "Best Roster for Week"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "buttonBestRosterActionPerformed", true ) )
 					} )
 					add( new FormComponent( "javax.swing.JComboBox" ) {
 						name: "comboBoxWeek"
@@ -102,8 +99,9 @@ new FormModel {
 						}
 					} )
 					add( new FormComponent( "javax.swing.JButton" ) {
-						name: "button3"
+						name: "buttonUpdate"
 						"text": "Update"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "buttonUpdateActionPerformed", true ) )
 					} )
 				}, new FormLayoutConstraints( null ) {
 					"title": "Roster"
