@@ -41,7 +41,7 @@ public class NewRoster extends JPanel {
     public void deleteRoster(){
         FantasyModel fm = FantasyModel.getFantasyModel();
         list1.getModel().getElementAt(list1.getSelectedIndex());
-        fm.
+
     }
 
     private void initComponents() {

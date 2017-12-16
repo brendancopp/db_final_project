@@ -22,25 +22,25 @@
       <file leaf-file-name="PlayerGui.jfd" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PlayerGui.jfd">
           <provider selected="true" editor-type-id="JFormDesigner">
-            <state paletteWidth="150" propertiesWidth="312" structureHeight="312" />
+            <state paletteWidth="0" propertiesWidth="0" structureHeight="0" />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="NewRoster.jfd" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/NewRoster.jfd">
           <provider selected="true" editor-type-id="JFormDesigner">
-            <state paletteWidth="150" propertiesWidth="312" structureHeight="312" />
+            <state paletteWidth="0" propertiesWidth="0" structureHeight="0" />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="NewRoster.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/NewRoster.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="573">
-              <caret line="43" column="11" lean-forward="false" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="11" />
+            <state relative-caret-position="814">
+              <caret line="40" column="28" lean-forward="false" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
               <folding>
-                <marker date="1513287706790" expanded="true" signature="1031:5501" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-                <marker date="1513287706790" expanded="true" signature="5513:5918" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+                <marker date="1513401259746" expanded="true" signature="1020:5490" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+                <marker date="1513401259746" expanded="true" signature="5502:5907" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
               </folding>
             </state>
           </provider>
@@ -49,21 +49,28 @@
       <file leaf-file-name="PlayerGui.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PlayerGui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="267" column="7" lean-forward="true" selection-start-line="267" selection-start-column="7" selection-end-line="275" selection-end-column="47" />
+            <state relative-caret-position="6622">
+              <caret line="313" column="7" lean-forward="false" selection-start-line="313" selection-start-column="7" selection-end-line="321" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1513284745508" expanded="true" signature="3128:11373" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-                <marker date="1513284745508" expanded="true" signature="11385:12114" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+                <marker date="1513402005444" expanded="true" signature="3128:13516" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+                <marker date="1513402005444" expanded="true" signature="13528:14386" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomSearch.jfd" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/CustomSearch.jfd">
+          <provider selected="true" editor-type-id="JFormDesigner">
+            <state paletteWidth="0" propertiesWidth="0" structureHeight="0" />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="SwingMain.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SwingMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
+            <state relative-caret-position="616">
               <caret line="31" column="46" lean-forward="false" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -79,7 +86,6 @@
               <caret line="38" column="35" lean-forward="false" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1704#1712#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -88,12 +94,10 @@
       <file leaf-file-name="Roster.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Roster.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="890">
+            <state relative-caret-position="880">
               <caret line="43" column="14" lean-forward="false" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1127#1128#0" expanded="true" />
-                <element signature="e#1155#1156#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -102,18 +106,18 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+            <state relative-caret-position="858">
+              <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QueryInterface.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="QueryInterface.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/QueryInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1628">
-              <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+            <state relative-caret-position="946">
+              <caret line="50" column="13" lean-forward="false" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -163,15 +167,15 @@
         <option value="$PROJECT_DIR$/src/ErrorPopup.java" />
         <option value="$PROJECT_DIR$/src/QueryInterface.java" />
         <option value="$PROJECT_DIR$/src/NewRoster.jfd" />
-        <option value="$PROJECT_DIR$/src/PlayerGui.jfd" />
         <option value="$PROJECT_DIR$/src/SwingMain.java" />
         <option value="$PROJECT_DIR$/src/Player.java" />
         <option value="$PROJECT_DIR$/src/PlayerGui.java" />
-        <option value="$PROJECT_DIR$/src/CustomSearch.jfd" />
         <option value="$PROJECT_DIR$/src/CustomSearch.java" />
         <option value="$PROJECT_DIR$/src/Roster.java" />
-        <option value="$PROJECT_DIR$/src/NewRoster.java" />
         <option value="$PROJECT_DIR$/src/FantasyModel.java" />
+        <option value="$PROJECT_DIR$/src/NewRoster.java" />
+        <option value="$PROJECT_DIR$/src/PlayerGui.jfd" />
+        <option value="$PROJECT_DIR$/src/CustomSearch.jfd" />
       </list>
     </option>
   </component>
@@ -196,9 +200,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -227,6 +229,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -642,7 +646,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32814237" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32711306" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967606" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32821077" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -719,7 +723,6 @@
           <caret line="13" column="36" lean-forward="false" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1704#1712#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -773,7 +776,6 @@
           <caret line="13" column="36" lean-forward="false" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1704#1712#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -827,7 +829,6 @@
           <caret line="13" column="36" lean-forward="false" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1704#1712#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -881,7 +882,6 @@
           <caret line="13" column="36" lean-forward="true" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1704#1712#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -920,8 +920,8 @@
           <caret line="67" column="42" lean-forward="false" selection-start-line="67" selection-start-column="42" selection-end-line="67" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1513284745508" expanded="true" signature="3128:11373" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1513284745508" expanded="true" signature="11385:12114" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+            <marker date="1513402005444" expanded="true" signature="3128:13516" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1513402005444" expanded="true" signature="13528:14386" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
           </folding>
         </state>
       </provider>
@@ -984,10 +984,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="473" column="11" lean-forward="false" selection-start-line="473" selection-start-column="11" selection-end-line="473" selection-end-column="11" />
-          <folding>
-            <element signature="e#19296#19297#0" expanded="false" />
-            <element signature="e#19379#19380#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1009,59 +1005,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CustomSearch.jfd">
-      <provider selected="true" editor-type-id="JFormDesigner">
-        <state paletteWidth="150" propertiesWidth="312" structureHeight="312" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CustomSearch.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="484">
           <caret line="129" column="41" lean-forward="false" selection-start-line="129" selection-start-column="41" selection-end-line="129" selection-end-column="41" />
           <folding>
-            <marker date="1513287706779" expanded="false" signature="323:6407" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1513287706779" expanded="false" signature="6651:7179" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+            <marker date="1513402005456" expanded="false" signature="323:6691" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1513402005456" expanded="false" signature="6935:7484" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/NewRoster.jfd">
-      <provider selected="true" editor-type-id="JFormDesigner">
-        <state paletteWidth="150" propertiesWidth="312" structureHeight="312" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PlayerGui.jfd">
-      <provider selected="true" editor-type-id="JFormDesigner">
-        <state paletteWidth="150" propertiesWidth="312" structureHeight="312" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/NewRoster.java">
+    <entry file="file://$PROJECT_DIR$/src/QueryInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="43" column="11" lean-forward="false" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="11" />
+        <state relative-caret-position="946">
+          <caret line="50" column="13" lean-forward="false" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
           <folding>
-            <marker date="1513287706790" expanded="true" signature="1031:5501" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1513287706790" expanded="true" signature="5513:5918" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PlayerGui.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="267" column="7" lean-forward="true" selection-start-line="267" selection-start-column="7" selection-end-line="275" selection-end-column="47" />
-          <folding>
+            <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <marker date="1513284745508" expanded="true" signature="3128:11373" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1513284745508" expanded="true" signature="11385:12114" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+            <marker date="1512612086442" expanded="false" signature="5052:5060" ph="&lt;~&gt;" />
+            <marker date="1512612086442" expanded="false" signature="5774:5780" ph="&lt;~&gt;" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SwingMain.java">
+    <entry file="file://$PROJECT_DIR$/src/Roster.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="31" column="46" lean-forward="false" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
+        <state relative-caret-position="880">
+          <caret line="43" column="14" lean-forward="false" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1074,42 +1045,64 @@
           <caret line="38" column="35" lean-forward="false" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1704#1712#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Roster.java">
+    <entry file="file://$PROJECT_DIR$/src/SwingMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="890">
-          <caret line="43" column="14" lean-forward="false" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
+        <state relative-caret-position="616">
+          <caret line="31" column="46" lean-forward="false" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1127#1128#0" expanded="true" />
-            <element signature="e#1155#1156#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        <state relative-caret-position="858">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/QueryInterface.java">
+    <entry file="file://$PROJECT_DIR$/src/PlayerGui.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1628">
-          <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+        <state relative-caret-position="6622">
+          <caret line="313" column="7" lean-forward="false" selection-start-line="313" selection-start-column="7" selection-end-line="321" selection-end-column="47" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <marker date="1512612086442" expanded="false" signature="5052:5060" ph="&lt;~&gt;" />
-            <marker date="1512612086442" expanded="false" signature="5774:5780" ph="&lt;~&gt;" />
+            <marker date="1513402005444" expanded="true" signature="3128:13516" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1513402005444" expanded="true" signature="13528:14386" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NewRoster.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="814">
+          <caret line="40" column="28" lean-forward="false" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
+          <folding>
+            <marker date="1513401259746" expanded="true" signature="1020:5490" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1513401259746" expanded="true" signature="5502:5907" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PlayerGui.jfd">
+      <provider selected="true" editor-type-id="JFormDesigner">
+        <state paletteWidth="0" propertiesWidth="0" structureHeight="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NewRoster.jfd">
+      <provider selected="true" editor-type-id="JFormDesigner">
+        <state paletteWidth="0" propertiesWidth="0" structureHeight="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CustomSearch.jfd">
+      <provider selected="true" editor-type-id="JFormDesigner">
+        <state paletteWidth="0" propertiesWidth="0" structureHeight="0" />
       </provider>
     </entry>
   </component>
