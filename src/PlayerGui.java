@@ -120,6 +120,7 @@ public class PlayerGui extends JPanel {
         button1 = new JButton();
         button2 = new JButton();
         comboBoxWeek = new JComboBox<>();
+        button3 = new JButton();
 
         //======== this ========
         setPreferredSize(new Dimension(800, 600));
@@ -199,20 +200,23 @@ public class PlayerGui extends JPanel {
                     "10"
                 }));
 
+                //---- button3 ----
+                button3.setText("Update");
+
                 GroupLayout rosterPanelLayout = new GroupLayout(rosterPanel);
                 rosterPanel.setLayout(rosterPanelLayout);
                 rosterPanelLayout.setHorizontalGroup(
                     rosterPanelLayout.createParallelGroup()
                         .addGroup(rosterPanelLayout.createSequentialGroup()
                             .addContainerGap()
-                            .addGroup(rosterPanelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                .addComponent(rosterAddPlayer, GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)
-                                .addComponent(scrollPane4, GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)
-                                .addGroup(GroupLayout.Alignment.LEADING, rosterPanelLayout.createSequentialGroup()
+                            .addGroup(rosterPanelLayout.createParallelGroup()
+                                .addComponent(rosterAddPlayer, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                                .addComponent(scrollPane4, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                                .addGroup(rosterPanelLayout.createSequentialGroup()
                                     .addComponent(rosterRosterLabel, GroupLayout.PREFERRED_SIZE, 64, GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(rosterComboBox))
-                                .addComponent(modifyRoster, GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE))
+                                .addComponent(modifyRoster, GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE))
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(rosterPanelLayout.createParallelGroup()
                                 .addComponent(scrollPane3, GroupLayout.PREFERRED_SIZE, 364, GroupLayout.PREFERRED_SIZE)
@@ -226,9 +230,10 @@ public class PlayerGui extends JPanel {
                                     .addComponent(comboBoxWeek, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
                             .addGap(6, 6, 6)
                             .addGroup(rosterPanelLayout.createParallelGroup()
-                                .addComponent(button2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(customSearch, GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
-                                .addComponent(button1, GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE))
+                                .addComponent(customSearch, GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                                .addComponent(button1, GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                                .addComponent(button3, GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                                .addComponent(button2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addContainerGap())
                 );
                 rosterPanelLayout.setVerticalGroup(
@@ -242,20 +247,19 @@ public class PlayerGui extends JPanel {
                                 .addGroup(GroupLayout.Alignment.TRAILING, rosterPanelLayout.createSequentialGroup()
                                     .addGap(0, 0, Short.MAX_VALUE)
                                     .addGroup(rosterPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(GroupLayout.Alignment.TRAILING, rosterPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                            .addComponent(label1)
-                                            .addComponent(button2))
                                         .addComponent(comboBoxWeek, GroupLayout.Alignment.TRAILING)
-                                        .addComponent(rosterComboBox, GroupLayout.Alignment.TRAILING))))
+                                        .addComponent(rosterComboBox, GroupLayout.Alignment.TRAILING)
+                                        .addComponent(button3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(label1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(rosterPanelLayout.createParallelGroup()
                                 .addGroup(rosterPanelLayout.createSequentialGroup()
                                     .addComponent(scrollPane4, GroupLayout.PREFERRED_SIZE, 317, GroupLayout.PREFERRED_SIZE)
                                     .addGap(18, 18, Short.MAX_VALUE)
                                     .addComponent(rosterAddPlayer)
-                                    .addGap(18, 18, 18)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(modifyRoster)
-                                    .addGap(90, 90, 90))
+                                    .addGap(88, 88, 88))
                                 .addGroup(rosterPanelLayout.createSequentialGroup()
                                     .addGroup(rosterPanelLayout.createParallelGroup()
                                         .addComponent(scrollPane3, GroupLayout.PREFERRED_SIZE, 504, GroupLayout.PREFERRED_SIZE)
@@ -263,7 +267,9 @@ public class PlayerGui extends JPanel {
                                             .addGap(48, 48, 48)
                                             .addComponent(button1)
                                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(customSearch)))
+                                            .addComponent(customSearch)
+                                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(button2)))
                                     .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 );
             }
@@ -280,7 +286,7 @@ public class PlayerGui extends JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup()
-                .addComponent(tabbedPane1, GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+                .addComponent(tabbedPane1)
         );
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
@@ -304,6 +310,7 @@ public class PlayerGui extends JPanel {
     private JButton button1;
     private JButton button2;
     private JComboBox<String> comboBoxWeek;
+    private JButton button3;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 
 
