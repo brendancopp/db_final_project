@@ -1,5 +1,6 @@
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 /*
@@ -17,7 +18,21 @@ public class CustomSearch extends JPanel {
     }
 
     private void buttonSearchActionPerformed(ActionEvent e) {
-        // TODO add your code here
+        submitSearch();
+    }
+
+    void submitSearch(){
+        String name = textFieldName.getText();
+        String team = textFieldTeam.getText();
+        String position = positionComboBox.getItemAt(positionComboBox.getSelectedIndex());
+        int weekNum = Integer.parseInt(comboBoxWeek.getItemAt(comboBoxWeek.getSelectedIndex()));
+
+        QueryInterface qi = QueryInterface.getQueryInterface();
+        //Call resulting stored procedure
+        ArrayList<Player> players; //TODO: hookup query interface
+
+        //Call update Button in PlayerGui
+        SwingMain.getPlayerGui().updateGui(players);
     }
 
     private void initComponents() {
@@ -144,16 +159,7 @@ public class CustomSearch extends JPanel {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
-    void submitSearch(){
-        String name = textFieldName.getText();
-        String team = textFieldTeam.getText();
-        String position = positionComboBox.getItemAt(positionComboBox.getSelectedIndex());
-        int weekNum = Integer.parseInt(comboBoxWeek.getItemAt(comboBoxWeek.getSelectedIndex()));
 
-        //Call resulting stored procedure
-
-        //Call update Button in PlayerGui
-    }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Brendan Copp

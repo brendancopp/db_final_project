@@ -8,6 +8,7 @@ import javax.swing.*;
 public class SwingMain implements Runnable {
 
     private static SwingMain mSM;
+    private static PlayerGui mPlayerGui;
 
     //Singleton Query
     public static SwingMain getSwingMain(){
@@ -20,7 +21,14 @@ public class SwingMain implements Runnable {
             return mSM;
     }
 
-
+    public static PlayerGui getPlayerGui(){
+        if (mPlayerGui == null){
+            mPlayerGui = new PlayerGui();
+            return mPlayerGui;
+        }
+        else
+            return mPlayerGui;
+    }
 
     @Override
     public void run() {
@@ -31,7 +39,7 @@ public class SwingMain implements Runnable {
         // Add a layout manager so that the button is not placed on top of the label
         mainFrame.setLayout(new FlowLayout());
 
-        PlayerGui mPlayerGui = new PlayerGui();
+        mPlayerGui = new PlayerGui();
 
         // Add a label and a button
         mainFrame.add(mPlayerGui);
@@ -44,7 +52,6 @@ public class SwingMain implements Runnable {
 
         // By default, the window is not visible. Make it visible.
         mainFrame.setVisible(true);
-
 
     }
 

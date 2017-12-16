@@ -42,8 +42,8 @@ public class QueryInterface {
         final String JDBC_DRIVER = DB.JDBC_DRIVER;
         final String DB_URL = DB.DB_URL;
 
-        final String USER = user;   //final String USER = "root";
-        final String PWD = pwd;     //final String PASS = "password";
+        final String USER = "root";   //final String USER = "root";
+        final String PWD = "1234";     //final String PASS = "password";
 
 
         Connection conn = null;
@@ -61,6 +61,63 @@ public class QueryInterface {
 
 
 
+    }
+
+    public ArrayList<Player> getPlayerSet(String query)
+    {
+        ArrayList<Player> outPlayerList = new ArrayList<Player>();  //Returns this ArrayList
+        try{
+            //Executes statement and gets cursor
+            mStmt.execute(query);
+            ResultSet rs = mStmt.getResultSet();
+
+            //Gathers metaData
+            ResultSetMetaData rsmd = rs.getMetaData();
+            int totalColumns = rsmd.getColumnCount();
+
+            //Defines datastructures
+            HashMap<String, String> playerMap;
+
+            //Iterate Cursor
+            while (rs.next()) {
+
+                playerMap = new HashMap<String, String>();
+                for(int i = 0; i < totalColumns; i++){
+                    playerMap.put(rsmd.getColumnLabel(i), rs.getString(i));
+                }
+
+                //Leaves parsing the headers up to the player constructor
+                outPlayerList.add(new Player(playerMap));
+            }
+
+            return outPlayerList;
+        }
+        catch(SQLException e) {
+            System.out.println(e.toString());
+        }
+
+        return outPlayerList;
+    }
+
+
+    public ArrayList<Player> getPlayersByPositionWeek(String position, int week) {
+        String query = String.format("CALL getPlayersByPositionWeek('%s',%s,%s)", position, week, 100);
+        return getPlayerSet(query);
+    }
+
+    public ArrayList<Player> getPlayersByName(String name, int week) {
+        String query = String.format("CALL getPlayersByName('%s',%s)", name, week);
+        return getPlayerSet(query);
+    }
+
+    public ArrayList<Player> getRosterPlayers(String roster, int week) {
+        String query = String.format("CALL getRosterPlayers('%s',%s)", roster, week);
+        return getPlayerSet(query);
+    }
+
+    public ArrayList<Player> getBestTeamByWeek(int week) {
+        String query = String.format("CALL getRosterPlayers(%s)",week);
+        return getPlayerSet(query);
     }
 
     //===============DUMMY DATA===============

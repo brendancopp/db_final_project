@@ -35,13 +35,17 @@ public class FantasyModel {
         return mapAllRosters.get(rosterName).getPlayersArrayList();
     }
 
-    /*public ArrayList<Player> setRosterPlayer(String rosterName, Player player){
-        return mapAllRosters.get(rosterName).setPlayer(player);
-    }*/
 
     public void removeRoster(Roster roster){
         mapAllRosters.remove(roster.mName);
+
         //TODO: delete from database
+    }
+
+    public void addRoster(Roster roster){
+        mapAllRosters.put(roster.mName, roster);
+
+        //TODO: add to database
     }
 
 

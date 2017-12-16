@@ -7,8 +7,6 @@ import javax.swing.GroupLayout;
  * Created by JFormDesigner on Mon Dec 11 15:11:49 PST 2017
  */
 
-
-
 /**
  * @author Brendan Copp
  */
@@ -36,21 +34,29 @@ public class NewRoster extends JPanel {
 
     public void addRoster(){
         String s = textField1.getText();
+
         //Call resulting query
+        Roster roster;  //TODO: make roster
+
+        FantasyModel fm = FantasyModel.getFantasyModel();
+        fm.addRoster(roster);
+        SwingMain.getPlayerGui().updateGui();
     }
 
     public void deleteRoster(){
-        FantasyModel fm = FantasyModel.getFantasyModel();
-        list1.getModel().getElementAt(list1.getSelectedIndex());
+        Roster roster = list1.getSelectedValue();
 
+        FantasyModel fm = FantasyModel.getFantasyModel();
+        fm.removeRoster(roster);
+        SwingMain.getPlayerGui().updateGui();
     }
 
     private void buttonAddRosterActionPerformed(ActionEvent e) {
-        // TODO add your code here
+        addRoster();
     }
 
     private void buttonDeleteRosterActionPerformed(ActionEvent e) {
-        // TODO add your code here
+        deleteRoster();
     }
 
     private void initComponents() {
@@ -58,7 +64,7 @@ public class NewRoster extends JPanel {
         // Generated using JFormDesigner Evaluation license - Brendan Copp
         label1 = new JLabel();
         displayRosters = new JScrollPane();
-        list1 = new JList();
+        list1 = new JList<>();
         buttonDeleteRoster = new JButton();
         textField1 = new JTextField();
         buttonAddRoster = new JButton();
@@ -141,7 +147,7 @@ public class NewRoster extends JPanel {
     // Generated using JFormDesigner Evaluation license - Brendan Copp
     private JLabel label1;
     private JScrollPane displayRosters;
-    private JList list1;
+    private JList<Roster> list1;
     private JButton buttonDeleteRoster;
     private JTextField textField1;
     private JButton buttonAddRoster;

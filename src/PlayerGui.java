@@ -3,6 +3,7 @@ import java.awt.event.*;
 import java.beans.*;
 import javax.swing.*;
 import javax.swing.GroupLayout;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import javafx.scene.control.ComboBox;
@@ -27,11 +28,19 @@ public class PlayerGui extends JPanel {
         FantasyModel fm = FantasyModel.getFantasyModel();
 
         //Populate ComboBoxs
-        for (String name : fm.getAllRosterNames()) {
-            rosterComboBox.addItem(name);
-        }
+        updateRosterComboBox();
+
         for (int i = 0; i < DB.POSITIONS.length; i++) {
             playerComboBox.addItem(DB.POSITIONS[i]);
+        }
+    }
+
+    public void updateRosterComboBox(){
+        FantasyModel fm = FantasyModel.getFantasyModel();
+        rosterComboBox.removeAllItems();
+
+        for (String name : fm.getAllRosterNames()) {
+            rosterComboBox.addItem(name);
         }
     }
 
@@ -47,45 +56,52 @@ public class PlayerGui extends JPanel {
     }
 
 
-    private void rosterListMyRosterValueChanged(ListSelectionEvent e) {
-        if (e.getValueIsAdjusting()){
-            int selectedIndex = ((JList<String>) e.getSource()).getSelectedIndex();
-            System.out.println("Selected Index is : " + selectedIndex);
-        }
-    }
-
-
-
     //Button Listeners
     private void rosterAddPlayerActionPerformed(ActionEvent e) {
-        int selectedIndex = rosterListPlayer.getSelectedIndex();
-        if(selectedIndex != -1){
-            Player player = rosterListPlayer.getModel().getElementAt(selectedIndex );
-
-            if(isPlayerDuplicate(selectedIndex, player)){
-                ErrorPopup.infoBox("You can only have one player per position", "Player Duplicate");
-            }
-
-            FantasyModel fm = FantasyModel.getFantasyModel();
-            String rosterName = (String) rosterComboBox.getSelectedItem();
-            fm.setRosterPlayer( rosterName , player);
-            setRosterList(rosterName);
+        int selectedPlayerIndex = rosterListPlayer.getSelectedIndex();
+        int selectedRosterIndex = rosterListMyRoster.getSelectedIndex();
+        if(selectedPlayerIndex == -1 || selectedRosterIndex == -1){
+            ErrorPopup.infoBox("To add a player to your roster you must first select Players", "Player Not Selected");
         }
-        else
-            ErrorPopup.infoBox("To add a player to your roster you must first select one from Players", "Player Not Selected");
+        else{
+            //Get Selected player
+            Player playerPlayer = rosterListPlayer.getSelectedValue();
+            Player playerRoster = rosterListMyRoster.getSelectedValue();
 
-    }
-
-    //Should be replaced by SQL Query
-    private boolean isPlayerDuplicate(int selectedIndex, Player player){
-        int rosterSize = rosterListMyRoster.getModel().getSize();
-        for(int i = 0; i < rosterSize; i++){
-            if(i != selectedIndex){
-                if(rosterListMyRoster.getModel().getElementAt(i).equals(player)){
-                    return true;
+            boolean isDuplicate = false;
+            for(int i = 0; i < rosterListMyRoster.getModel().getSize(); i++){
+                if(rosterListMyRoster.getModel().getElementAt(i).mID == playerPlayer.mID){
+                    isDuplicate = true;
                 }
             }
+            if(isDuplicate){
+                ErrorPopup.infoBox("You already have one of these players on your roster", "Player Duplicate");
+                return;
+            }
+
+            if(isPlayerSamePosition(playerPlayer, playerRoster)){
+                ErrorPopup.infoBox("This player is the wrong position, please select again", "Wrong Position");
+                return;
+            }
+
+            //Success
+            FantasyModel fm = FantasyModel.getFantasyModel();
+            String rosterName = (String) rosterComboBox.getSelectedItem();
+            fm.setRosterPlayer( rosterName , playerPlayer );
+
+            //TODO: Update Database
         }
+    }
+
+    private boolean isPlayerDuplicate(Player playerPlayer, Player playerRoster){
+        if(playerPlayer.mID == playerRoster.mID)
+            return true;
+        return false;
+    }
+
+    private boolean isPlayerSamePosition(Player playerPlayer, Player playerRoster){
+        if(playerPlayer.mPosition == playerRoster.mPosition)
+            return true;
         return false;
     }
 
@@ -100,12 +116,114 @@ public class PlayerGui extends JPanel {
     }
 
     private void buttonUpdateActionPerformed(ActionEvent e) {
-        // TODO add your code here
+        updateGui();
+    }
+
+    private String getCurrentRoster(){
+        return rosterComboBox.getItemAt(comboBoxWeek.getSelectedIndex());
+    }
+
+    private String getCurrentPosition(){
+        return playerComboBox.getItemAt(comboBoxWeek.getSelectedIndex());
+    }
+
+    private int getCurrentWeek(){
+        return Integer.parseInt(comboBoxWeek.getItemAt(comboBoxWeek.getSelectedIndex()));
+    }
+
+    public void updateGui(){
+        int week = getCurrentWeek();
+        String position = getCurrentPosition();
+        String roster = getCurrentRoster();
+
+        DefaultListModel<Player> rosterModel = createRosterPlayerModel(roster);
+        DefaultListModel<Player> playersModel = createPlayersModel(position, week);
+
+        rosterListMyRoster.setModel(rosterModel);
+        rosterListPlayer.setModel(playersModel);
+    }
+
+    public void updateGui(ArrayList<Player> players){
+        int week = getCurrentWeek();
+        String position = getCurrentPosition();
+        String roster = getCurrentRoster();
+
+        DefaultListModel<Player> rosterModel = createRosterPlayerModel(roster);
+        DefaultListModel<Player> playersModel = createPlayersModel(players);
+
+        rosterListMyRoster.setModel(rosterModel);
+        rosterListPlayer.setModel(playersModel);
     }
 
     private void buttonBestRosterActionPerformed(ActionEvent e) {
         // TODO add your code here
     }
+
+    //LIST HANDELERS
+    public void setRosterList(String rosterName) {
+        rosterListMyRoster.setModel(createRosterPlayerModel(rosterName));
+    }
+
+    private DefaultListModel<Player> createRosterPlayerModel(String rosterName){
+
+        FantasyModel fm = FantasyModel.getFantasyModel();
+        ArrayList<Player> rosterArrayList = fm.getRosterPlayers(rosterName);
+
+        DefaultListModel<Player> listModel = new DefaultListModel<>();
+        for (Player player : rosterArrayList) {
+            listModel.addElement(player);
+        }
+
+        return listModel;
+    }
+
+    private DefaultListModel<Player> createPlayersModel(String position, int week){
+
+        FantasyModel fm = FantasyModel.getFantasyModel();
+        ArrayList<Player> playersArrayList = fm.mQI.getPlayersByPositionWeek(position, week);
+
+        DefaultListModel<Player> listModel = new DefaultListModel<>();
+        for (Player player : playersArrayList) {
+            listModel.addElement(player);
+        }
+
+        return listModel;
+    }
+
+    private DefaultListModel<Player> createPlayersModel(ArrayList<Player> players){
+
+        DefaultListModel<Player> listModel = new DefaultListModel<>();
+        for (Player player : players) {
+            listModel.addElement(player);
+        }
+
+        return listModel;
+    }
+
+
+    public void setPlayerList(String playerPosition) {
+        QueryInterface qi = QueryInterface.getQueryInterface();
+
+        ArrayList<Player> playerList = qi.getFakePlayers();
+
+        DefaultListModel<Player> listModel = new DefaultListModel<>();
+        for (Player player : playerList) {
+            listModel.addElement(player);
+        }
+
+        rosterListPlayer.setModel(listModel);
+    }
+
+    public void setPlayerList(ArrayList<Player> playerList) {
+
+        DefaultListModel<Player> listModel = new DefaultListModel<>();
+        for (Player player : playerList) {
+            listModel.addElement(player);
+        }
+
+        rosterListPlayer.setModel(listModel);
+    }
+
 
 
     private void initComponents() {
@@ -314,63 +432,6 @@ public class PlayerGui extends JPanel {
     private JComboBox<String> comboBoxWeek;
     private JButton buttonUpdate;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
-
-
-
-    //LIST HANDELERS
-    public void setRosterList(String rosterName) {
-
-        FantasyModel fm = FantasyModel.getFantasyModel();
-        ArrayList<Player> rosterArrayList = fm.getRosterPlayers(rosterName);
-
-        DefaultListModel<Player> listModel = new DefaultListModel<>();
-        for (Player player : rosterArrayList) {
-            listModel.addElement(player);
-        }
-
-        rosterListMyRoster.setModel(listModel);
-    }
-
-    public void setPlayerList(String playerPosition) {
-        QueryInterface qi = QueryInterface.getQueryInterface();
-
-        ArrayList<Player> playerList = qi.getFakePlayers();
-
-        DefaultListModel<Player> listModel = new DefaultListModel<>();
-        for (Player player : playerList) {
-            listModel.addElement(player);
-        }
-
-        rosterListPlayer.setModel(listModel);
-    }
-
-
-
-
-/*        rosterListMyRoster.setModel(new AbstractListModel<String>() {
-            String[] values = rosterArrayList.toArray( new String[rosterArrayList.size()] );
-
-            @Override
-            public int getSize() { return values.length; }
-            @Override
-            public String getElementAt(int i) { return values[i]; }
-        }*/
-
-/*
-    public void setPlayerList(String positionName){
-        QueryInterface qi = QueryInterface.getQueryInterface();
-        qi.getFakeRoster();
-        for
-
-        rosterListMyRoster.setModel(new AbstractListModel<String>() {
-            String[] values = playerArrayList.toArray( new String[playerArrayList.size()] );
-
-            @Override
-            public int getSize() { return values.length; }
-            @Override
-            public String getElementAt(int i) { return values[i]; }
-        });
-    }*/
 
 
 }

@@ -17,6 +17,9 @@ new FormModel {
 				name: "displayRosters"
 				add( new FormComponent( "javax.swing.JList" ) {
 					name: "list1"
+					auxiliary() {
+						"JavaCodeGenerator.typeParameters": "Roster"
+					}
 				} )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
