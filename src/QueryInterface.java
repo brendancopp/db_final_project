@@ -23,8 +23,8 @@ public class QueryInterface {
     //Singleton Query
     public static QueryInterface getQueryInterface(){
         if (mQI == null){
-            //mQI = new QueryInterface("user", "pwd");
-            mQI = new QueryInterface();     //Fake DB
+            mQI = new QueryInterface("root", "1234");
+            //mQI = new QueryInterface();     //Fake DB
             return mQI;
         }
         else
@@ -42,8 +42,8 @@ public class QueryInterface {
         final String JDBC_DRIVER = DB.JDBC_DRIVER;
         final String DB_URL = DB.DB_URL;
 
-        final String USER = "root";   //final String USER = "root";
-        final String PWD = "1234";     //final String PASS = "password";
+        final String USER = user;   //final String USER = "root";
+        final String PWD = pwd;     //final String PASS = "password";
 
 
         Connection conn = null;
@@ -62,6 +62,7 @@ public class QueryInterface {
 
 
     }
+
 
     public ArrayList<Player> getPlayerSet(String query)
     {
@@ -99,25 +100,65 @@ public class QueryInterface {
         return outPlayerList;
     }
 
+    public void updateQuery(String query) {
+        try {
+            mStmt.executeUpdate(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
     public ArrayList<Player> getPlayersByPositionWeek(String position, int week) {
-        String query = String.format("CALL getPlayersByPositionWeek('%s',%s,%s)", position, week, 100);
+        String query = String.format("CALL getPlayersByPositionWeek('%s',%s,%d)", position, week, 100);
         return getPlayerSet(query);
     }
 
     public ArrayList<Player> getPlayersByName(String name, int week) {
-        String query = String.format("CALL getPlayersByName('%s',%s)", name, week);
+        String query = String.format("CALL getPlayersByName('%s',%d)", name, week);
         return getPlayerSet(query);
     }
 
     public ArrayList<Player> getRosterPlayers(String roster, int week) {
-        String query = String.format("CALL getRosterPlayers('%s',%s)", roster, week);
+        String query = String.format("CALL getRosterPlayers('%s',%d)", roster, week);
         return getPlayerSet(query);
     }
 
     public ArrayList<Player> getBestTeamByWeek(int week) {
         String query = String.format("CALL getRosterPlayers(%s)",week);
         return getPlayerSet(query);
+    }
+
+    public ArrayList<Player> getPlayersByCustomSearch(String name, String team, String pos, int week) {
+        String query = String.format("CALL getPlayersByCustomSearch('%s','%s','%s',%d)",name, team, pos, week);
+        return getPlayerSet(query);
+    }
+
+    public ArrayList<Player> getRosters() {
+        String query = "CALL getRosters()";
+        return getPlayerSet(query);
+    }
+
+    public void addRoster(String roster) {
+        String query = String.format("CALL addRoster('%s')", roster);
+        updateQuery(query);
+    }
+
+    public void clearRoster(String roster) {
+        String query = String.format("CALL clearRoster('%s')", roster);
+        updateQuery(query);
+    }
+
+    public void deleteRoster(String roster) {
+        String query = String.format("CALL deleteRoster('%s')", roster);
+        updateQuery(query);
+    }
+
+    public void updateRoster(String roster, ArrayList<Player> players) {
+        for (Player player:players) {
+            String player_id = ""+player.mID;
+            String query = String.format("CALL addPlayerToRoster('%s','%s')", roster, player_id);
+            updateQuery(query);
+        }
     }
 
     //===============DUMMY DATA===============
@@ -198,80 +239,5 @@ public class QueryInterface {
         return outPlayerList;
     }
 
-    /*public Player[] getRoster(String user) {
-        String query = "SELECT * FROM User";
-
-    }
-
-   public HashMap<String, String> getPlayerByAttribute(String selectAttributes, String value ) {
-        String query = "SELECT";
-
-
-        //SELECT Formatting
-        //Populates the QUERY SELECT with column names from "columns"
-        for(int index = 0; index < columns.length; index++){
-            if((index + 1) >= columns.length){
-                query.concat(" " + columns[index]);
-            }
-            else{
-                query.concat(" " + columns[index] + ",");
-            }
-        }
-
-
-    }*/
-
-
-
-/*
-    public ArrayList<Player> getAllPlayers() {
-        String query = "SELECT * FROM Player";
-        ArrayList<Player> players = new ArrayList<Player>();
-
-        try{
-            ResultSet rs = mStmt.executeQuery(query);
-            while (rs.next()) {
-                String player_id = rs.getString("player_id");
-                String player_name = rs.getString("player_name");
-                String player_position = rs.getString("player_position");
-                //All Traits
-
-                players.add(new Player(player_id, player_name, player_position));
-            }
-        }
-        catch(SQLException ex){
-            System.out.println(ex.getErrorCode());
-        }
-
-        return players;
-
-    }
-*/
-
-
-
-/*
-    public ArrayList<User> getAllPlayers()  {
-        String query = "SELECT * FROM Player";
-        ArrayList<User> users = new ArrayList<User>();
-
-        //Queries for all users, and creates objects from them
-        try{
-            ResultSet rs = stmt.executeQuery(query);
-            while (rs.next()) {
-                String user_id = rs.getString("user_id");
-                String user_name = rs.getString("user_name");
-
-                users.add(new User(user_id, user_name));
-            }
-        }
-        catch(SQLException ex){
-            System.out.println(ex.getErrorCode());
-        }
-
-
-        return users;
-    }
-*/
 
 }

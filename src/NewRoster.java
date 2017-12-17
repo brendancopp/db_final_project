@@ -33,14 +33,16 @@ public class NewRoster extends JPanel {
     }
 
     public void addRoster(){
-        String s = textField1.getText();
+        String rosterName = textField1.getText();
+        QueryInterface qi = QueryInterface.getQueryInterface();
 
         //Call resulting query
-        Roster roster;  //TODO: make roster
+        qi.addRoster(rosterName);
+        //Roster roster = qi.rost;  //TODO: make roster
 
         FantasyModel fm = FantasyModel.getFantasyModel();
-        fm.addRoster(roster);
-        SwingMain.getPlayerGui().updateGui();
+        //fm.addRoster(roster);
+        //SwingMain.getPlayerGui().updateGui();
     }
 
     public void deleteRoster(){
@@ -50,6 +52,8 @@ public class NewRoster extends JPanel {
         fm.removeRoster(roster);
         SwingMain.getPlayerGui().updateGui();
     }
+
+
 
     private void buttonAddRosterActionPerformed(ActionEvent e) {
         addRoster();

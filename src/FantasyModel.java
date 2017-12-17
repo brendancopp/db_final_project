@@ -24,9 +24,15 @@ public class FantasyModel {
         mQI = QueryInterface.getQueryInterface();
         mapAllRosters = new HashMap<String, Roster>();
 
+        ArrayList<String> rosterIds = mQI.getRosters();
+
+        for(String id : rosterIds){
+            mapAllRosters.put(id, )
+        }
+
         //----------Make FAKE Roster--------
-        Roster fakeRoster = new Roster(mQI.getFakeRoster());
-        mapAllRosters.put(fakeRoster.mName, fakeRoster);
+        //Roster fakeRoster = new Roster(mQI.getFakeRoster());
+        //mapAllRosters.put(fakeRoster.mName, fakeRoster);
         //----------------------------------
     }
 

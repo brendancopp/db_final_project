@@ -89,7 +89,9 @@ public class PlayerGui extends JPanel {
             String rosterName = (String) rosterComboBox.getSelectedItem();
             fm.setRosterPlayer( rosterName , playerPlayer );
 
-            //TODO: Update Database
+            QueryInterface qi = QueryInterface.getQueryInterface();
+            qi.updateRoster(rosterName, fm.getRosterPlayers(rosterName));
+            //TO: Update Database
         }
     }
 

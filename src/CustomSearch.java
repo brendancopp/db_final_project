@@ -29,7 +29,7 @@ public class CustomSearch extends JPanel {
 
         QueryInterface qi = QueryInterface.getQueryInterface();
         //Call resulting stored procedure
-        ArrayList<Player> players; //TODO: hookup query interface
+        ArrayList<Player> players = qi.getPlayersByCustomSearch(name, team, position, weekNum); //TODO: hookup query interface
 
         //Call update Button in PlayerGui
         SwingMain.getPlayerGui().updateGui(players);
